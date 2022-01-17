@@ -6,11 +6,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: black;
+    background-color: white;
     position: fixed;
     top: 0;
     z-index: 100;
 }
+
 
 
 .header_nav {
@@ -25,10 +26,44 @@
     margin-left: 20px;
     padding: 10px;
     text-decoration: none;
-    color: white;
+    color: skyblue;
 }
 
 .nav_enlace:hover {
     border-bottom: 1px solid #000;
 }
 
+.header_logo {
+    color: #000;
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+
+.carrito { 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;   
+}
+
+.carrito_img {
+    width: 60px;
+    color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.carrito_number {
+    font-size: .9rem;
+    text-align: center;
+    background-color: skyblue;
+    color: white;
+    border-radius: 30%;
+    transform: translate(-150%, -70%);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
