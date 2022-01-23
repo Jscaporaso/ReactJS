@@ -3,11 +3,13 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 
+const mensaje = "Productos en oferta";
+
 function App() {
   return (
-    <div>
+    <div className="App">
       <NavBar />
-      <ItemListContainer greeting="Camiseta Titular"/>
+      <ItemListContainer name={mensaje} />
     </div>
   );
 }

@@ -1,38 +1,51 @@
-import {useState} from 'react';
-import {Stack} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import {Button,ButtonGroup,Table} from 'react-bootstrap';
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount=({min,max,onAdd,count,stock,product_name})=>{
 
-    const [count, setCount] = useState(initial)
-
-    const addItem = () =>{
-        if (count < stock)
-            setCount (count + 1);
-    }
-
-    const quitItem = () =>{
-        if (count > initial)
-            setCount (count - 1);
-    }
-
-    const onAdd = () => {
-        const message = `Usted agrego ${count} producto`;
-        if (count>0)
-            count === 1 ? alert (message): alert (`${message}s`)
-                
-    }
+console.log(count);
     return (
-        <>
-            <Stack class="row 4" gap={3}>
-                                <Button onClick={quitItem} variant="outline-danger"> - </Button>
-                <h3 class="text-center"> { count } </h3>
-                <Button onClick={addItem} variant="outline-success" > + </Button>
-                
-            </Stack>
+<>
+        <p></p>
+        <p></p>
 
-            <Button onClick={onAdd} variant="success">Agregar al Carrito</Button>
-        </>
+
+        <ButtonGroup aria-label="Basic example">
+        <Table striped bordered hover variant="dark" size="sm" >
+  <thead>
+    <tr>
+      <th></th>
+      <th>{product_name}</th>
+      <th>      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+    <Button variant="secondary"  onClick={min}>-</Button>
+            </td>
+      <td>{count}</td>
+          <td>
+        <Button variant="secondary" onClick={max}>+</Button>
+              </td>
+    </tr>
+    <tr>
+      <td>  </td>
+      <td>
+          <Button variant="secondary"   disabled={ count===0}  onClick={onAdd}>Agregar al Carrito</Button>
+</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</Table>
+
+</ButtonGroup>
+
+
+</>
     );
+
+
 };
+
 export default ItemCount;

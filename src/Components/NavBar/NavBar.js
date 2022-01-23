@@ -1,16 +1,17 @@
 import "./NavBar.css";
 import Logo from "../../media/logoracing.png"
 import CartWidget from "../CartWidget"
+import React from "react";
 
 function NavBar() {
     return <nav>
-        <header class="header">
-            <img class="header_logo" src={Logo} alt="logo"/>
+        <header className="header">
+            <img className="header_logo" src={Logo} alt="logo"/>
             
-            <nav class="header_nav">
-                <a class="nav_enlace" href="#locales">Locales</a>
-                <a class="nav_enlace" href="#contacto">Contacto</a>
-                <a class="nav_enlace" href="#seguinos">Seguinos</a>
+            <nav className="header_nav">
+                <a className="nav_enlace" href="#locales">Locales</a>
+                <a className="nav_enlace" href="#contacto">Contacto</a>
+                <a className="nav_enlace" href="#seguinos">Seguinos</a>
             </nav>
 
             <CartWidget />

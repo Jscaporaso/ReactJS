@@ -1,29 +1,27 @@
-import React from "react";
-import camisetaTitular from "../../media/camiseta.jpg";
-import ItemCount from "../ItemCount";
-import "./ItemListContainer.css";
+import ItemList from '../ItemList';
+import jsonpack from '../data.json';
+import React, {useState} from 'react';
+import './ItemListContainer.css';
 
-export const ItemListContainer = ({ greeting }) => {
-  return (
-    <div className="contenedor">
-      <div className="row">
-        <div className="col-md-8">
-          <div className="card">
-            <img src={camisetaTitular} alt="camisetatitular" />
-            <div className="card-body">
-              <h4 className="card-title text-primary"> {greeting} </h4>
-              <p className="card-text text-secondary">
-                {" "}
+const ItemListContainer = ({name}) => {
+    const[item,setItems]=useState([])
+    const call = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(jsonpack)
+        },2000)
+    })
 
-              </p>
-                            <ItemCount stock ={5} initial ={1}/>              
+    call.then(response=> {
+        setItems(response)
+    })
+    return (
+        <div className="contenedor" name="test">
+            <div className="listas p-3 mb-2 text-white">{name}
+                <ItemList items={item}/>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
+   )
+}
 export default ItemListContainer;
+
 
